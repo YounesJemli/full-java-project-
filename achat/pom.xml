@@ -11,7 +11,6 @@
 	<groupId>tn.esprit.rh</groupId>
 	<artifactId>achat</artifactId>
 	<version>1.0</version>
-	<packaging>war</packaging>
 	<name>achat</name>
 	<description>Projet pour le module DevOps</description>
 	<properties>
@@ -26,6 +25,16 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -54,40 +63,29 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>3.0.0</version>
 		</dependency>
+
 	</dependencies>
-	<distributionManagement>
-        	<repository>
-            		<id>Nexus</id>
-            		<name>maven-repo-project-pfe</name>
-            		<url>http://192.168.174.131:8081/repository/maven-repo/</url>
-        	</repository>
-    	</distributionManagement>
+
 	<build>
-		<finalName>achat</finalName>
-    		<plugins>
-        		<plugin>
-            			<groupId>org.apache.maven.plugins</groupId>
-            			<artifactId>maven-compiler-plugin</artifactId>
-            			<version>3.8.0</version> 
-				<configuration>
-                			<source>1.8</source>  
-					<target>1.8</target>  
-				</configuration>
-        		</plugin>
+		<plugins>
 			<plugin>
-  				<groupId>org.apache.maven.plugins</groupId>
-  				<artifactId>maven-war-plugin</artifactId>
- 				<version>3.2.2</version>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-                			<warName>achat</warName> <!-- Set the warName instead of finalName -->
-            			</configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.10</version>
+				<version>0.8.8</version>
 				<executions>
-				<execution>
+					<execution>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
@@ -99,30 +97,8 @@
 							<goal>report</goal>
 						</goals>
 					</execution>
-
-					<execution>
-						<id>jacoco-check</id>
-						<goals>
-							<goal>check</goal>
-						</goals>
-						<configuration>
-							<rules>
-								<rule>
-									<element>PACKAGE</element>
-									<limits>
-										<limit>
-											<counter>LINE</counter>
-											<value>COVEREDRATIO</value>
-											<minimum>0.0</minimum>
-										</limit>
-									</limits>
-								</rule>
-							</rules>
-						</configuration>
-					</execution>
-
 				</executions>
 			</plugin>
-    		</plugins>
+		</plugins>
 	</build>
 </project>
