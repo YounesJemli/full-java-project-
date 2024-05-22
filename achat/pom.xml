@@ -55,6 +55,18 @@
 			<version>3.0.0</version>
 		</dependency>
 	</dependencies>
+	<distributionManagement>
+        	<repository>
+            		<id>Nexus</id>
+            		<name>maven-repo-project-pfe</name>
+            		<url>http://192.168.174.131:8081/repository/maven-repo-project-pfe/</url>
+        	</repository>
+        	<snapshotRepository>
+            		<id>Nexus</id>
+            		<name>Snapshots Repository</name>
+            		<url>http://192.168.174.131:8081/repository/maven-repo-project-pfe/</url>
+        	</snapshotRepository>
+    	</distributionManagement>
 	<build>
 		<finalName>achat</finalName>
     		<plugins>
