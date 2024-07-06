@@ -33,6 +33,14 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Firefox'],  // Use Firefox browser
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+
+    customLaunchers: {
+      FirefoxHeadless: {
+        base: 'Firefox',
+        flags: ['-headless'],
+        firefoxPath: '/usr/bin/firefox'
+      }
+    }
   });
 };
