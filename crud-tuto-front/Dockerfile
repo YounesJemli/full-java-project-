@@ -1,5 +1,9 @@
 # stage 1
 FROM node:14.21.3-alpine as node
+
+# Install Firefox
+RUN apk add --no-cache firefox
+
 WORKDIR /app
 COPY . .
 RUN npm install
