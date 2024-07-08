@@ -3,6 +3,7 @@ FROM node:14.21.3-alpine as node
 
 # Install Firefox
 RUN apk add --no-cache firefox
+ENV FIREFOX_BIN=/usr/bin/firefox
 
 WORKDIR /app
 COPY . .
