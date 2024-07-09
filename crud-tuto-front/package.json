@@ -43,8 +43,8 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "tslib": "^2.3.1",
     "typescript": "~4.2.3",
-    "cypress": "^9.0.0",  // for E2E testing with Cypress
-    "cypress-axe": "^0.12.0",  // for accessibility testing with Axe
-    "lighthouse": "^9.0.0"  // for performance and accessibility testing
+    "cypress": "^9.0.0",  
+    "cypress-axe": "^0.12.0", 
+    "lighthouse": "^9.0.0" 
   }
 }
