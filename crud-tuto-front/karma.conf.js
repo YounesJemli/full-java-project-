@@ -7,7 +7,8 @@ module.exports = function (config) {
       require('karma-firefox-launcher'),  // Use karma-firefox-launcher plugin
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma'),
+      require('karma-junit-reporter')
     ],
     client: {
       jasmine: {
@@ -28,7 +29,7 @@ module.exports = function (config) {
     },
     reporters: ['progress', 'kjhtml', 'junit'],
     junitReporter: {
-      outputDir: 'coverage', 
+      outputDir: 'test-results', 
       outputFile: 'test-results.xml', 
       useBrowserName: false 
     },
@@ -37,7 +38,7 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['FirefoxHeadless'],  // Use Firefox browser
-    singleRun: false,
+    singleRun: true,
     restartOnFileChange: true,
 
     customLaunchers: {
