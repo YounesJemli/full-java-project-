@@ -5,8 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "test:integration": "ng test --main=src/integration-test.ts",
+    "accessibility": "lighthouse http://localhost:4200 --output json --output-path ./accessibility-report.json",
+    "performance": "lighthouse http://localhost:4200 --output html --output-path ./performance-report.html"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +42,9 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "tslib": "^2.3.1",
-    "typescript": "~4.2.3"
+    "typescript": "~4.2.3",
+    "cypress": "^9.0.0",  // for E2E testing with Cypress
+    "cypress-axe": "^0.12.0",  // for accessibility testing with Axe
+    "lighthouse": "^9.0.0"  // for performance and accessibility testing
   }
 }
