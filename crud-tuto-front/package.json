@@ -13,7 +13,7 @@
     "performance": "lighthouse http://localhost:4200 --output html --output-path ./performance-report.html"
   },
   "private": true,
-  "dependencies": {
+ "dependencies": {
     "@angular/animations": "^13.0.0",
     "@angular/common": "^13.0.0",
     "@angular/compiler": "^13.0.0",
