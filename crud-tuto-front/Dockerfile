@@ -7,6 +7,7 @@ ENV FIREFOX_BIN=/usr/bin/firefox
 
 WORKDIR /app
 COPY . .
+RUN nmp cache clean --force
 RUN npm install
 RUN npm run build --prod
 
