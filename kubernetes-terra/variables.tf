@@ -3,18 +3,6 @@ variable "project_id" {
   type        = string
 }
 
-data "google_secret_manager_secret_version" "service_account_key" {
-  secret_id = "devops-service-account-key"
-}
-
-variable "service_account_key_data" {
-  type = string
-}
-
-locals {
-  service_account_key_data = jsondecode(data.google_secret_manager_secret_version.service_account_key.data)
-}
-
 variable "region" {
   description = "europe-west1-d"
   type        = string
@@ -43,4 +31,9 @@ variable "node_preemptible" {
 
 variable "initial_node_count" {
   type = number
+}
+
+variable "secret_id" {
+  description = "The ID of the secret to fetch"
+  type        = string
 }
