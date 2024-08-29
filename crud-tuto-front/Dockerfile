@@ -8,7 +8,7 @@ ENV FIREFOX_BIN=/usr/bin/firefox
 WORKDIR /app
 COPY . .
 RUN npm cache clean --force
-RUN npm install
+RUN npm install --legacy-peer-deps
 RUN npm run build --prod
 
 # stage 2
