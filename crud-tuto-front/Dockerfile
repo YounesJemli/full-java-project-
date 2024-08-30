@@ -1,5 +1,5 @@
 # stage 1
-FROM node:14.21.3-alpine as node
+FROM node:14.21.3-alpine AS node
 
 # Install Firefox
 RUN apk add --no-cache firefox
